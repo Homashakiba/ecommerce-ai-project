@@ -13,6 +13,15 @@ export default function ProductDetail() {
       .catch((err) => console.error("Error fetching product:", err));
   }, [id]);
 
+useEffect(() => {
+  const viewed = JSON.parse(localStorage.getItem("viewed") || "[]");
+
+  if (!viewed.includes(id)) {
+    viewed.push(id);
+    localStorage.setItem("viewed", JSON.stringify(viewed));
+  }
+}, [id]);
+
   const handleAddToCart = () => {
     fetch("http://localhost:5000/cart", {
       method: "POST",

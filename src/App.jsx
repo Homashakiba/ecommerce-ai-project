@@ -1,16 +1,9 @@
-import DailyReward from "./components/DailyReward";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Navbar from "./components/Navbar";
-import Home from "./pages/Home";
-import ProductList from "./pages/ProductList";
-import ProductDetail from "./pages/ProductDetail";
-import Cart from "./pages/Cart";
-
 function App() {
   return (
     <Router>
       <Navbar />
       <div className="p-4">
+        <DailyReward />  {/* 👈 This line shows the reward popup */}
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/products" element={<ProductList />} />
@@ -21,5 +14,3 @@ function App() {
     </Router>
   );
 }
-
-export default App;
