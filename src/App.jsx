@@ -3,7 +3,7 @@ function App() {
     <Router>
       <Navbar />
       <div className="p-4">
-        <DailyReward />  {/* 👈 This line shows the reward popup */}
+        <DailyReward />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/products" element={<ProductList />} />
@@ -14,3 +14,5 @@ function App() {
     </Router>
   );
 }
+
+export default App;
